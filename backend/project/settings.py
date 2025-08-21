@@ -49,15 +49,16 @@ DEBUG = os.environ.get('DJANGO_DEBUG', 'False') == 'True'
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
-    "64.226.116.144",
-    "macromates.propulsion-learn.ch",
+    "138.68.108.166",
+    "macromates.ch",
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5173",
-    "https://macromates.propulsion-learn.ch",
+    "https://138.68.108.166",
+    "https://macromates.ch",
 ]
 
 # Setup support for proxy headers
