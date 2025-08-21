@@ -75,7 +75,7 @@ deploy:
   tags:
     - macro
   only:
-    - master
+    - main
   when: manual
   script:
     - docker compose -f docker-compose.deploy.yml pull
