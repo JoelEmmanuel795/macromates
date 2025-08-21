@@ -1,29 +1,29 @@
-import { useState, useEffect } from "react";
+import {useEffect, useState} from "react";
 import useApiRequest from "./useApiRequest";
 
 export default function useFetchUserGoals() {
-  const { sendRequest, data, error, isLoading } = useApiRequest({ auth: true });
-  const [hasGoals, setHasGoals] = useState(false);
+    const {sendRequest, data, error, isLoading} = useApiRequest({auth: true});
+    const [hasGoals, setHasGoals] = useState(false);
 
-  const getUserGoals = () => {
-    sendRequest("get", "goals/my-goals/");
-  };
+    const getUserGoals = () => {
+        sendRequest("get", "goals/my-goals/");
+    };
 
-  useEffect(() => {
-    getUserGoals();
-  }, []);
+    useEffect(() => {
+        getUserGoals();
+    }, []);
 
-  useEffect(() => {
-    if (data) {
-      setHasGoals(data.results?.length > 0);
-    }
-  }, [data]);
+    useEffect(() => {
+        if (data) {
+            setHasGoals(data.results?.length > 0);
+        }
+    }, [data]);
 
-  return {
-    goals: data?.results || [],
-    error,
-    isLoading,
-    getUserGoals,
-    hasGoals,
-  };
+    return {
+        goals: data?.results || [],
+        error,
+        isLoading,
+        getUserGoals,
+        hasGoals,
+    };
 }

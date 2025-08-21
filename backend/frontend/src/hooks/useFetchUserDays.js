@@ -1,28 +1,28 @@
-import { useState, useEffect } from "react";
+import {useEffect, useState} from "react";
 import useApiRequest from "./useApiRequest";
 
 export default function useFetchUserDays() {
-  const { sendRequest, data, error, isLoading } = useApiRequest({ auth: true });
-  const [days, setDays] = useState([]);
+    const {sendRequest, data, error, isLoading} = useApiRequest({auth: true});
+    const [days, setDays] = useState([]);
 
-  const fetchUserDays = () => {
-    sendRequest("get", "users/me/days/");
-  };
+    const fetchUserDays = () => {
+        sendRequest("get", "users/me/days/");
+    };
 
-  useEffect(() => {
-    fetchUserDays();
-  }, []);
+    useEffect(() => {
+        fetchUserDays();
+    }, []);
 
-  useEffect(() => {
-    if (data) {
-      setDays(data.results || []);
-    }
-  }, [data]);
+    useEffect(() => {
+        if (data) {
+            setDays(data.results || []);
+        }
+    }, [data]);
 
-  return {
-    days,
-    error,
-    isLoading,
-    fetchUserDays,
-  };
+    return {
+        days,
+        error,
+        isLoading,
+        fetchUserDays,
+    };
 }
