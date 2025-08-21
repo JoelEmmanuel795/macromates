@@ -1,3 +1,0 @@
-services:
-  backend:
-    image: "${IMAGE_LC}:${RUN_ID}-${SAFE_TAG}"

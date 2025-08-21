@@ -20,7 +20,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "^64311-n)hb#l)pojpe$@7rr@4t_%*8r6c*dehldxc9g(-hx")
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "-$n57f@!^a#*8+fe0=efti)ce19r42)z@iufdt#)-(hik&3+4&")
 
 # # Determine environment
 # ENVIRONMENT = config("ENVIRONMENT", default="dev")
@@ -49,16 +49,15 @@ DEBUG = os.environ.get('DJANGO_DEBUG', 'False') == 'True'
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
-    "138.68.108.166",
-    "macromates.ch",
+    "64.226.116.144",
+    "macromates.propulsion-learn.ch",
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5173",
-    "https://macromates.ch",
-    "https://138.68.108.166"
+    "https://macromates.propulsion-learn.ch",
 ]
 
 # Setup support for proxy headers
