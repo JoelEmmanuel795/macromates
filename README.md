@@ -1,93 +1,184 @@
-# Nomi Lang
+# MacroMates
 
+**Effortless Meal & Macronutrient Tracking Powered by AI**
 
+---
 
-## Getting started
+## 🎥 Demo Video
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+<video src="assets/macromates_video.mp4" controls width="700"></video>
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+---
 
-## Add your files
+## Overview
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/topics/git/add_files/#add-files-to-a-git-repository) or push an existing Git repository with the following command:
+**MacroMates** is an innovative health and nutrition platform designed to help users set, track, and achieve their dietary goals with ease. By leveraging AI and a modern tech stack, MacroMates streamlines the process of meal logging and macro tracking, making healthy eating accessible and sustainable for everyone.
+
+**Key Features:**
+
+- **AI-Powered Meal Analysis:** Snap a photo of your meal and instantly receive detailed macronutrient and calorie breakdowns.
+- **Personalized Insights:** Meal scores and recommendations are tailored to each user's biometric data and nutrition goals.
+- **Natural Language Goal Setting:** Set goals like “I want to lose 5kg in 2 months” and receive smart, realistic suggestions.
+- **Visual Progress Tracking:** Interactive charts, graphs, and dashboards to monitor daily, weekly, and monthly macro intake.
+- **Historical Data:** Analyze trends and patterns in your eating habits over time.
+
+---
+
+## Problem Statement
+
+Traditional nutrition tracking apps require tedious manual entry, leading to abandoned goals and poor long-term results. MacroMates solves this by automating meal logging and providing instant, personalized feedback, making nutrition tracking both effective and enjoyable.
+
+---
+
+## How MacroMates Works
+
+1. **Set Your Goals:** Define clear objectives in natural language (e.g., “I want to lose 5 kg in 2 months”). AI refines and validates these goals with personalized suggestions and realistic timelines.
+2. **Log Meals Instantly:** Snap a photo of your meal; AI instantly analyzes the contents, calculating calories and macronutrients.
+3. **Get Personalized Feedback:** Receive insights and meal scores tailored to your biometrics, age, and goals.
+   - Example: The same plate of fries may score lower for an older user reducing cholesterol but higher for a younger athlete aiming to bulk.
+4. **Track Progress:** Visualize your macro intake and goal achievement with intuitive dashboards.
+
+---
+
+## Tech Stack
+
+| Layer    | Technology                                                 |
+| -------- | ---------------------------------------------------------- |
+| Frontend | React, Vite, Tailwind CSS, DaisyUI, Chart.js, React Webcam |
+| Backend  | Django REST Framework                                      |
+| Database | PostgreSQL                                                 |
+| AI       | OpenAI API Integration                                     |
+| DevOps   | Docker, GitLab CI/CD, Digital Ocean                        |
+
+---
+
+## Architecture & Codebase
+
+The project is organized as a **monorepo** with clear separation of concerns:
 
 ```
-cd existing_repo
-git remote add origin https://gitlab.com/my_website7155632/nomi-lang.git
-git branch -M main
-git push -uf origin main
+macromates/
+├── backend/      # Django REST API: authentication, user profiles, food items, goals, AI integration
+│   ├── authentication/
+│   ├── customUser/
+│   ├── foodItem/
+│   ├── foodPhoto/
+│   ├── userday/
+│   ├── usergoal/
+│   ├── usermonth/
+│   ├── project/  # Django settings & routing
+│   └── manage.py
+├── frontend/     # React SPA: UI components, pages, state management, webcam integration
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── store/
+│   │   └── ...
+│   ├── public/
+│   └── index.html
+├── assets/       # Images, videos, documentation
+├── nginx/        # Reverse proxy configuration
+├── scripts/      # Dev/prod shell scripts
+├── Dockerfile    # Backend containerization
+├── docker-compose.yml
+└── README.md     # Project documentation
 ```
 
-## Integrate with your tools
+**Highlights:**
 
-- [ ] [Set up project integrations](https://gitlab.com/my_website7155632/nomi-lang/-/settings/integrations)
+- **AI Integration:** `usergoal/ai_utils.py` connects to OpenAI for meal analysis and goal validation.
+- **Custom User Model:** Extensible user profiles for personalized recommendations.
+- **RESTful API:** Modular endpoints for authentication, meal logging, goal management, and analytics.
+- **Frontend:** Modern React architecture with Vite for fast builds, Tailwind/DaisyUI for styling, and Chart.js for data visualization.
+- **DevOps:** Dockerized deployment, GitLab CI/CD pipelines, and Nginx for production-grade hosting.
 
-## Collaborate with your team
+---
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/user/project/merge_requests/auto_merge/)
+## Getting Started
 
-## Test and Deploy
+### Prerequisites
 
-Use the built-in continuous integration in GitLab.
+- Docker & Docker Compose
+- Node.js & npm (for frontend development)
+- Python 3.10+ (for backend development)
+- PostgreSQL
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+### Local Development
 
-***
+**Backend:**
 
-# Editing this README
+```bash
+cd backend
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.yml
+python manage.py migrate
+python manage.py runserver
+```
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+**Frontend:**
 
-## Suggestions for a good README
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+**Full Stack (Docker):**
 
-## Name
-Choose a self-explaining name for your project.
+```bash
+docker-compose up --build
+```
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+---
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+## AI Integration
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+MacroMates leverages OpenAI to:
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+- Analyze meal photos and estimate macronutrient content.
+- Parse and validate user goals set in natural language.
+- Provide personalized feedback based on user health profiles.
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+---
 
 ## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+
+- **Gamification:** Rewards, achievement badges, and streaks.
+- **Enhanced AI:** Improved accuracy for food recognition and macro estimation.
+- **Community Features:** Social sharing, group challenges, support forums.
+- **Integrations:** Sync with wearables, health apps, and barcode scanning.
+- **Open Source:** Welcoming contributions and feedback from the community.
+
+---
 
 ## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+We welcome collaboration! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines, or open an issue/PR to get started.
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+---
 
 ## License
-For open source projects, say how it is licensed.
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+This project is licensed under the MIT License.
+
+---
+
+## Team
+
+**Joel Gamonez**  
+**Rudolf Cardol**
+
+---
+
+## Contact
+
+For questions, feedback, or collaboration opportunities, please reach out via [GitHub Issues](https://github.com/your-repo/macromates/issues) or email.
+
+---
+
+**MacroMates – Empowering healthy habits through AI and intuitive design.**
+
+---
+
+_This README is designed to provide a comprehensive, professional overview for potential employers, contributors, and users. For more details, see the [MacroMates Blog](assets/MacroMates%20Blog.pdf)._
