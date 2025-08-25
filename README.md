@@ -10,7 +10,9 @@ You can access the deployed version of MacroMates here:
 ## 🎥 Demo Video
 
 ▶️ **Click below to see MacroMates in action**  
-[![Watch the Demo](assets/video_thumbnail.png)](https://www.youtube.com/watch?v=_grQ8WPekds)
+<a href="https://www.youtube.com/watch?v=_grQ8WPekds" target="_blank">
+<img src="assets/video_thumbnail.png" alt="Watch the Demo" width="600">
+</a>
 
 ## Overview
 
