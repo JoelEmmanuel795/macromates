@@ -6,7 +6,7 @@
 
 ## 🎥 Demo Video
 
-<video src="assets/macromates_video.mp4" controls width="700"></video>
+[▶️ Watch the demo (opens in GitHub Pages)](https://JoelEmmanuel795.github.io/macromates/)
 
 ---
 
