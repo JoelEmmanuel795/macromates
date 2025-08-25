@@ -2,24 +2,48 @@
 
 **Effortless Meal & Macronutrient Tracking Powered by AI**
 
----
+## Live Demo
+
+You can access the deployed version of MacroMates here:  
+[https://macromates.ch/](https://macromates.ch/)
 
 ## 🎥 Demo Video
 
-[![Watch the Demo](https://img.youtube.com/vi/_grQ8WPekds/0.jpg)](https://www.youtube.com/watch?v=_grQ8WPekds)
-
----
+▶️ **Click below to see MacroMates in action**  
+[![Watch the Demo](assets/video_thumbnail.png)](https://www.youtube.com/watch?v=_grQ8WPekds)
 
 ## Overview
 
 **MacroMates** is an innovative health and nutrition platform designed to help users set, track, and achieve their dietary goals with ease. By leveraging AI and a modern tech stack, MacroMates streamlines the process of meal logging and macro tracking, making healthy eating accessible and sustainable for everyone.
 
-**Key Features:**
+---
+
+## Key Features:
 
 - **AI-Powered Meal Analysis:** Snap a photo of your meal and instantly receive detailed macronutrient and calorie breakdowns.
+<p align="center">
+  <img src="assets/9.png" height="400">
+  <img src="assets/7.png" height="400">
+</p>
+
 - **Personalized Insights:** Meal scores and recommendations are tailored to each user's biometric data and nutrition goals.
+<p align="center">
+  <img src="assets/2.png" height="400">
+  <img src="assets/4.png" height="400">
+</p>
+
 - **Natural Language Goal Setting:** Set goals like “I want to lose 5kg in 2 months” and receive smart, realistic suggestions.
+<p align="center">
+  <img src="assets/8.png" height="400">
+  <img src="assets/10.png" height="400">
+</p>
+
 - **Visual Progress Tracking:** Interactive charts, graphs, and dashboards to monitor daily, weekly, and monthly macro intake.
+<p align="center">
+  <img src="assets/5.png" height="400">
+  <img src="assets/6.png" height="400">
+</p>
+
 - **Historical Data:** Analyze trends and patterns in your eating habits over time.
 
 ---
@@ -148,32 +172,20 @@ MacroMates leverages OpenAI to:
 - **Enhanced AI:** Improved accuracy for food recognition and macro estimation.
 - **Community Features:** Social sharing, group challenges, support forums.
 - **Integrations:** Sync with wearables, health apps, and barcode scanning.
-- **Open Source:** Welcoming contributions and feedback from the community.
-
----
-
-## Contributing
-
-We welcome collaboration! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines, or open an issue/PR to get started.
-
----
-
-## License
-
-This project is licensed under the MIT License.
 
 ---
 
 ## Team
 
 **Joel Gamonez**  
-**Rudolf Cardol**
+**Rudolf Cardol**  
+**Nomi Lang**
 
 ---
 
 ## Contact
 
-For questions, feedback, or collaboration opportunities, please reach out via [GitHub Issues](https://github.com/your-repo/macromates/issues) or email.
+For questions, feedback, or collaboration opportunities, please reach out via [GitHub Issues](https://github.com/your-repo/macromates/issues) or email to macromates25@gmail.com
 
 ---
 
