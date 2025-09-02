@@ -2,11 +2,6 @@
 
 **Effortless Meal & Macronutrient Tracking Powered by AI**
 
-## Live Demo
-
-You can access the deployed version of MacroMates here:  
-[https://macromates.ch/](https://macromates.ch/)
-
 ## 🎥 Demo Video
 
 ▶️ **Click below to see MacroMates in action**  
